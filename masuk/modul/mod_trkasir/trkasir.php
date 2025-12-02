@@ -380,22 +380,22 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
                              }
 
                             if (s == 1 ) {
-                               $(row).find('td:eq(3)').text('Umum');
+                               $(row).find('td:eq(3)').text('Reguler');
                                $(row).find('td:eq(3)').css('background-color', '#1e90ff');
                                $(row).find('td:eq(3)').css('color', '#ffffff'); 
                              }
                              else if (s == 2 ) {
-                                $(row).find('td:eq(3)').text('Resep');
+                                $(row).find('td:eq(3)').text('Member');
                                 $(row).find('td:eq(3)').css('background-color', '#32cd32');
                                 $(row).find('td:eq(3)').css('color', '#ffffff');                                
                              }
                              else if (s == 3 ) {
-                                $(row).find('td:eq(3)').text('Khusus'); 
+                                $(row).find('td:eq(3)').text('Market Place'); 
                                 $(row).find('td:eq(3)').css('background-color', '#ff0000');
                                 $(row).find('td:eq(3)').css('color', '#ffffff');                               
                              }
                              else if (s == 4 ) {
-                                $(row).find('td:eq(3)').text('Khusus'); 
+                                $(row).find('td:eq(3)').text('Market Place'); 
                                 $(row).find('td:eq(3)').css('background-color', '#ffa500');
                                 $(row).find('td:eq(3)').css('color', '#ffffff');                             
                              }
@@ -605,9 +605,9 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 									<label class='col-sm-4 control-label'>Jenis Transaksi</label>        		
 									 <div class='col-sm-7'>									    
 										    <select name='jns_transaksi' id='jns_transaksi' class='form-control'>
-										        <option value='1'>Umum</option>
-										        <option value='2'>Resep</option>
-										        <option value='3'>Khusus</option>
+										        <option value='1'>Reguler</option>
+										        <option value='2'>Member</option>
+										        <option value='3'>Marketplace</option>
 										       
 										        
 										    </select>										
@@ -625,9 +625,17 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 									 
 									<label class='col-sm-4 control-label'>Nama Barang</label>        		
 											<div class='col-sm-7'>
-													<input type=text name='nmbrg_dtrkasir' id='nmbrg_dtrkasir' class='form-control' autocomplete='off'>
-											</div>
-											
+    											<div class='btn-group btn-group-justified' role='group' aria-label='...'>
+                                                    <div class='btn-group' role='group'>
+    											        <input type=text name='nmbrg_dtrkasir' id='nmbrg_dtrkasir' class='typeahead form-control' autocomplete='off'>
+                                                        
+                                                    </div>
+                                                    <div class='btn-group' role='group'>
+                                                        <button type='button' class='btn btn-primary' id='nmbrg_dtrkasir_enter'>Enter</button>
+                                                    </div>
+                                                </div>
+    										</div>
+    										
 									<label class='col-sm-4 control-label'>ETALASE</label>        		
 											<div class='col-sm-7'>
 													<select class='form-control' name='jenisobat' id='jenisobat'>
@@ -805,9 +813,9 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 									<label class='col-sm-4 control-label'>Jenis Transaksi</label>        		
 									 <div class='col-sm-7'>									    
 										    <select name='jns_transaksi' id='jns_transaksi' class='form-control'>
-										        <option value='1'>Umum</option>
-										        <option value='2'>Resep</option>
-										        <option value='3'>Khusus</option>
+										        <option value='1'>Reguler</option>
+										        <option value='2'>Member</option>
+										        <option value='3'>Marketplace</option>
 										        
 										    </select>										
 									 </div>
@@ -1125,9 +1133,9 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 									<label class='col-sm-4 control-label'>Jenis Transaksi</label>        		
 									 <div class='col-sm-7'>									    
 										    <select name='jns_transaksi' id='jns_transaksi' class='form-control'>
-										        <option value='1'>Umum</option>
-										        <option value='2'>Resep</option>
-										        <option value='3'>Khusus</option>
+										        <option value='1'>Reguler</option>
+										        <option value='2'>Member</option>
+										        <option value='3'>Marketplace</option>
 										    </select>										
 									 </div>
 									 
@@ -1983,6 +1991,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
         var diskon2 = document.getElementById('diskon2').value;
         var dp_bayar = document.getElementById('dp_bayar').value;
         var sisa_bayar = document.getElementById('sisa_bayar').value;
+        
         var ket_trkasir = document.getElementById('ket_trkasir').value;
         var stt_aksi = document.getElementById('stt_aksi').value;
         var id_carabayar = document.getElementById('id_carabayar').value;
